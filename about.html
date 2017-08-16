@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: white;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("https://static.pexels.com/photos/21014/pexels-photo.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("http://teacher.scholastic.com/activities/immigration/timeline_photos/1892_small_fullsize.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://data.whicdn.com/images/34606906/original.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("http://cbsnews3.cbsistatic.com/hub/i/r/2013/08/31/b81a722e-20fa-11e3-9283-005056850598/thumbnail/1200x630/cd87d05c3bf9ccccf5c8d526d2a8c2ad/LibertyBell.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 30px "Lato", sans-serif;
+  color: #111;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#4F6D7A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D9DCD6;
+}
+
+.active {
+    background-color: #2F6690;
+}
+
+table, td {
+  border: 20px solid white;
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <ul style="font: 400 15px/1.8 "Helvetica Neue", sans-serif;">
+      <li><a href="file:///C:/Users/hp/Desktop/website2.html">Home</a></li>
+      <li><a href="file:///C:/Users/hp/Desktop/newtrivia.html">Trivia</a></li>
+      <li><a href="file:///C:/Users/hp/Desktop/yourrights.html">Your Rights</a></li>
+      <li><a href="file:///C:/Users/hp/Desktop/re.html">Your Resources</a></li>
+      <li><a class="active" href="file:///C:/Users/hp/Desktop/about.html">About Us</a></li>
+    </ul>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ * {box-sizing:border-box}
+ body {font-family: Verdana,sans-serif;}
+ .mySlides {display:none}
+
+ /* Slideshow container */
+ .slideshow-container {
+   max-width: 1000px;
+   position: relative;
+
+ }
+   .active {
+   background-color: #717171;
+ }
+
+ /* Fading animation */
+ .fade {
+   -webkit-animation-name: fade;
+   -webkit-animation-duration: 1.5s;
+   animation-name: fade;
+   animation-duration: 1.5s;
+ }
+
+ @-webkit-keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+ }
+
+ @keyframes fade {
+   from {opacity: .4}
+   to {opacity: 1}
+ }
+
+ /* On smaller screens, decrease text size */
+ @media only screen and (max-width: 300px) {
+   .text {font-size: 11px}
+ }
+ </style>
+ </head>
+ <body>
+
+<center>
+<div class="slideshow-container">
+
+ <div class="mySlides fade">
+   <img src="aboutus.jpg" style="width:950px; height:650px;">
+ </div>
+
+ <div class="mySlides fade">
+   <img src="C:\Users\hp\Desktop\group.jpg" style="width:950px; height:650px">
+ </div>
+
+</center>
+
+
+
+
+ </div>
+ <br>
+
+
+ <script>
+ var slideIndex = 0;
+ showSlides();
+
+ function showSlides() {
+     var i;
+     var slides = document.getElementsByClassName("mySlides");
+     for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+     }
+     slideIndex++;
+     if (slideIndex> slides.length) {slideIndex = 1}
+     slides[slideIndex-1].style.display = "block";
+     setTimeout(showSlides, 2000);
+ }
+ </script>
+ </body>
+
+<div style="position:relative;">
+      <div style="color: #485F87;background-color: white ;text-align:center;padding:20px; ">
+
+    <table id="myTable">
+      <tr>
+        <td width= "320px" valign="top"><img src="C:\Users\hp\Desktop\image2.jpg" style="width:250px; length:300px;"><h3 style="text-align:center ;color:#3E6A75;">Kyna<br>Eagar</h3>
+        <p>I am currently a rising senior at Franklin High School. I participated in the Girls Who Code program where I learned to code. Participating in this program not only grew my knowledge in Computer Science but also prepared me for the future in college, and in the business world. My favorite color is lilac purple, and whenever I can, I like to bake. I also enjoy playing the violin, hanging with friends, and playing card games.  </p></td>
+        <td width="320" valign="top"><img src="MS.png" style="width:250px; length:275px;"><h3 style="text-align:center ;color:#3E6A75 ;">Malaika Shah</h3>
+        <p> I am curently a rising junior at Easton Area High School. At first I was not considering doing computer science as my career option, but after experiencing Girls Who Code, coding has grown on me. I plan on incorporating coding to my careerpath in Law. I have strongly connected with the girls here in GWC(Girls Who Code),and hope to hold onto these relationships. I like to hang out with my friends and family during my free time, and play my cello.</p></td>
+
+        <td width="320px" valign="top"><img src="C:\Users\hp\Desktop\pic5.jpg" style="width:125px; length:150px;"><h3 style="text-align:center ;color:#3E6A75;">Stephanie Yepez</h3>
+        <p> I'm a rising senior at Bloomfield Tech High School. I'm currently 17 years old. Before joining Girls Who Code, I had no prior knowledge in computer science. However, throughout the program I was able to improve upon my skills in computer science, and I have gained a huge respect for the women in the computer science/computer engineering field. I strongly encourage more girls to learn this skill, and to join this program.  </p></td>
+        <td width="320px" valign="top"><img src="C:\Users\hp\Desktop\pic3.jpg" style="width:150px; length:100px;"><h3 style="text-align:center ;color:#3E6A75;">Emily<br> Ramos</h3>
+        <p> I'm a rising junior at Morristown-Beard School. I'm currently 16 years old. I learned to code thorugh Girls Who Code, because of this experience I plan on continuing my education in computer science. I feel like Girls Who Code has prepared me for pursuing a career in computer science. The program has also opened my eyes on how big the gender gap in technology really is.  I enjoy spending time with my friends and family, watching Netflix, and reading. </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>
+
+
+
+
+
+<div style="color:#5286A2;background-color: white  ;text-align:center;padding:40px 70px;text-align: justify; font-size: 20px">
+  <h3 style="text-align:center;color:#5796B8;">OUR MISSION</h3>
+  <p><center>This summer we participated in Girls Who Code, a non-profit organization working towards closing the gender gap in computer science. We participated in the Summer Immersion program at NJIT. As our final project we decided to build a website that not only provides the resources to help immigrants who come to the U.S., but also raise immigration awareness in the U.S.</center> </p>
+</div>
+
+
+</body>
+</html>
