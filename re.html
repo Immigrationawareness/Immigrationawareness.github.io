@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("https://meadows.house.gov/sites/meadows.house.gov/files/styles/congress_featured_image/public/featured_image/issues/iStock_000007233892Small.jpg?itok=n0JDOpqK");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("http://elearningschool.co.uk/wp-content/uploads/2016/05/learning-english.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://data.whicdn.com/images/34606906/original.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/34/9e/b2/349eb2156a0a58dca336c70de2a4eeb3.jpg");
+  min-height: 600px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F6D7A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D9DCD6;
+}
+
+.active {
+    background-color: #2F6690;
+}
+
+   #map {
+    height: 400px;
+    width: 100%;
+   }
+</style>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Google Maps Multiple Markers</title>
+<script src="http://maps.google.com/maps/api/js?sensor=false"
+        type="text/javascript"></script>
+
+
+</head>
+<body>
+
+
+  <ul style="font: 400 15px/1.8 "Helvetica Neue", sans-serif;">
+    <li><a href="file:///C:/Users/hp/Desktop/website2.html">Home</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/newtrivia.html">Trivia</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/yourrights.html">Your Rights</a></li>
+    <li><a class="active" href="file:///C:/Users/hp/Desktop/re.html">Your Resources</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/about.html">About Us</a></li>
+  </ul>
+
+
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">USA IMMIGRATION RESOURCES</span>
+    </div>
+  </div>
+
+  <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: justify;">
+<style>
+h3{
+  color:white;
+  font-size: 20px;
+}
+</style>
+    <h3> Field Offices </h3>
+    <p> Use this map to find immigration offices near you!</p>
+    <div id="map"></div>
+    <script  type="text/javascript">
+        var locations = [
+            ["530 Fellowship Road Mount Laurel, NJ 08054",39.933594, -74.957974, 4],
+            ["970 Broad Street Newark, NJ 07102",40.730466,-74.,5],
+            ["8801 NW 7th Avenue Miami, FL 33150", 25.855524, -80.208848],
+            ["5629 Hoover Boulevard Tampa, FL 33634",27.999184,-82.532178],
+            ["6680 Corporate Centre Boulevard Orlando, FL 32822",28.467010, -81.298123],
+            ["6500 Campus Circle Drive East Irving, TX 75063", 32.897516,-96.978060],
+            ["1545 Hawkins Boulevard El Paso, TX 79925", 31.791782, -106.372538],
+            ["810 Gears Road, Suite 100, Houston, Texas 77067", 29.946763, -95.427369],
+            ["20760 US - 281 Suite A, San Antonio, TX 78258",29.635180, -98.454760],
+            ["744 P Street, Ste 120, Fresno, CA 93721-2712",36.736051,-119.780851],
+            ["300 North Los Angeles Street Los Angeles, CA 90012", 34.053746, -118.239600],
+            ["444 Washington Street San Francisco, CA 94111", 37.795928, -122.401331],
+            ["1325 Front Street, San Diego, CA 92101", 32.719620, -117.164270],
+            ["650 Capitol Mall Sacramento, CA 95814",38.577792, -121.499861],
+            ["1455 NW Overton Street Portland, OR 97209", 45.532354,-122.686077],
+            ["12500 Tukwila International Boulevard Seattle, WA 98168", 47.490472, -122.291156],
+            ["101 West Congress Parkway Chicago, IL 60605", 41.875343, -87.631049],
+            ["210 Walnut Street, Room 215 Des Moines, IA 50309", 41.586406, -93.620150],
+            ["1086 Troy-Schenectady Road Latham, NY 12110",42.765364, -73.812296],
+            ["306 Delaware Avenue, Buffalo, NY 14202", 42.892868, -78.876559],
+            ["26 Federal Plaza, 3rd Floor, Room 3-120 New York, NY 10278", 40.715576, -74.004235],
+            [" 64 Gricebrook Road Saint Albans, VT 05478", 44.801328, -73.072951],
+            ["2150 Parklake Drive NE Atlanta, Georgia 30345", 33.848229, -84.249863],
+            ["5678 East Virginia Beach Blvd., Norfolk, VA 23502", 36.856575, -76.211463],
+            ["2675 Prosperity Avenue Fairfax, VA 22031-4906", 38.880765, -77.232610],
+            ["John F. Kennedy Federal Building, Government Center, Boston, MA 02203", 42.361138, -71.060032],
+            ["2 Mill Street Lawrence, MA 01840",42.707097, -71.156753],
+            ["2800 Skyway Drive Helena, MT 59602",46.612436, -111.990614],
+            ["12484 East Weaver Place Centennial, CO 80111", 39.598902, -104.842981],
+            ["J.W. Peck Federal Building 550 Main Street, Room 4001 Cincinnati, OH 45202-5298", 39.102406, -84.509455],
+            ["395 E. Broad Street, Suite 100, Columbus, OH 43215",39.963130,-82.990013],
+            ["12484 East Weaver Place Centennial, CO 80111", 39.598902, -104.842981],
+            ["1185 South Vinnell Way Boise, ID 83709", 43.594262, -116.287517],
+            ["2901 Metro Drive, Suite 100 Bloomington, MN 55425", 44.859548, -93.229997],
+            ["150 East B Street, Room 1014 Casper, WY 82601",42.852319,-106.324345],
+            ["12484 East Weaver Place Centennial, CO 80111",39.598902, -104.842981],
+            [" 660 South 200 East, Suite 400 Salt Lake City, UT 84111", 40.754977, -111.886124],
+            ["1717 Avenue H Omaha, NE 68110", 41.280643, -95.907917],
+            ["1330 South 16th Street Phoenix, AZ 85034", 33.435744,-112.049174],
+            ["5650 West Badura Avenue, Suite 100 Las Vegas, NV 89118", 36.064562, -115.217747],
+            ["100 West Capitol Street, Suite 727 Jackson MS 39269",32.300867,-90.189007],
+            ["3381 Atlanta Highway, Montgomery, AL 36109",32.385320,-86.260250],
+            ["10320 NW Prairie View Rd. Kansas City, MO 64153",39.279668,-94.675263]
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 5,
+       center: new google.maps.LatLng(40.730466,-74.175030),
+       mapTypeId: google.maps.MapTypeId.ROADMAP
+     });
+     var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
+        </script>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLuX37cj6bt_OBVXpGosSP4kNzzy1GJAw&callback=initMap">
+    </script>
+  </div>
+
+  <div class="bgimg-2">
+
+<style>
+
+/* quick reset */
+* {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+/* relevant styles */
+.img__wrap {
+position: relative;
+height: 300px;
+width: 500px;
+}
+
+.img__description {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(29, 106, 154, 0.72);
+color: #fff;
+visibility: hidden;
+opacity: 0;
+
+/* transition effect. not necessary */
+transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+visibility: visible;
+opacity: 1;
+
+}
+a {
+  color:white;
+}
+h4 {
+  color:#52A26E;
+  font-size: 20px;
+    font-family: "Lato", sans-serif;
+
+}
+.img__img{
+  height: 300px;
+  width:500px
+}
+</style>
+
+<div class="caption">
+  <span class="border" style="background-color:transparent;font-size:40px;color: #f7f7f7;"></span>
+</div>
+</div>
+
+<div style="color:#6FDF96  ;background-color:white;text-align:center;padding:50px 100px;text-align: justify;">
+<h3 style="text-align:center;font-size:30px;color:#52A26E ;">LEARNING ENGLISH</h3>
+<p> <br><h4>Down below are several links to websites<br> that will serve to help you learn and improve your english: </h4>
+<br>
+
+
+<div class="caption">
+<span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
+</div>
+</div>
+
+
+
+<table>
+<tr>
+    </div>
+  </div>
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+      <img class="img__img" src="C:\Users\hp\Desktop\link1.jpg" />
+      <p class="img__description"style="text-align:center;font-size:25px;"><br><br><br><a href="http://a4esl.org/">www.a4esl.org/</a></p>
+  </div>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="C:\Users\hp\Desktop\link.jpg" />
+<p class="img__description"style="text-align:center;color:white;font-size:25px;"><br><br><br><a href="http://easyworldofenglish.com/Default.aspx">www.easyworldofenglish.com</a></p>
+</div>
+</td>
+</tr>
+<tr>
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="C:\Users\hp\Desktop\link3.jpg" />
+<p class="img__description"style="text-align:center;color:white;font-size:20px;"><br><br><br><a href="http://www.learn-english-online.org/">www.learn-english-online.org</a></p>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="C:\Users\hp\Desktop\link4.jpg" />
+<p class="img__description"style="text-align:center;color:white;font-size:20px;"><br><br><br><a href="http://www.usalearns.org/speaking-english">www.usalearns.org/speaking-english</a></p>
+</div>
+</td>
+</tr>
+<tr>
+
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="C:\Users\hp\Desktop\link5.jpg" />
+<p class="img__description"style="text-align:center;color:white;font-size:20px;"><br><br><br><a href= "https://www.duolingo.com/course/en/ar/Learn-English-Online">www.duolingo.com</a></p>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="C:\Users\hp\Desktop\link6.jpg" />
+<p class="img__description"style="text-align:center;color:white;font-size:20px;"><br><br><br><a href="http://www.englisch-hilfen.de/en/">www.englisch-hilfen.de/en/</a></p>
+</div>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+</body>
+</html>
