@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Helvetica Neue", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("http://longwallpapers.com/Desktop-Wallpaper/travel-wallpapers-mobile-For-Desktop-Wallpaper.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("http://longwallpapers.com/Desktop-Wallpaper/travel-wallpapers-mobile-For-Desktop-Wallpaper.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://data.whicdn.com/images/34606906/original.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("http://cbsnews3.cbsistatic.com/hub/i/r/2013/08/31/b81a722e-20fa-11e3-9283-005056850598/thumbnail/1200x630/cd87d05c3bf9ccccf5c8d526d2a8c2ad/LibertyBell.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 7px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Helvetica Neue", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F6D7A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D9DCD6;
+}
+
+.active {
+    background-color: #2F6690;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background: #011936;
+  color: #fff;
+}
+
+
+
+.section {
+  background: #011936;
+  padding: 50px 0;
+}.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+}
+
+ans {
+
+}
+
+.questions {
+
+    color: white;
+    top: 50px;
+    position: relative;
+  }
+h1 { color: black;
+   font-size: 60px;
+   top: 70px;
+   left: 550px;
+  position: absolute;
+}
+
+h2 { color:white;
+     z-index: -1;
+}
+h3 { font-size:20px;
+  color:white;
+    top: 20px;
+     position: relative;
+}
+
+h4{
+  color: green;
+  top:550px;
+  position: relative;
+}
+
+#button{
+        top: 60px;
+        position:relative;
+        }
+center{
+     position: relative;
+    top: 150px;
+    }
+
+ans {
+background-color: transparent;
+}
+
+
+</style>
+<script>
+function check(){
+  var ans1 = document.quiz.question1.value;
+  var ans2 = document.quiz.question2.value;
+  var ans3 = document.quiz.question3.value;
+  var ans4 = document.quiz.question4.value;
+  var ans5 = document.quiz.question5.value;
+  var ans6 = document.quiz.question6.value;
+  var ans7 = document.quiz.question7.value;
+  var ans8 = document.quiz.question8.value;
+  var ans9 = document.quiz.question9.value;
+  var ans10 = document.quiz.question10.value;
+  var ans11 = document.quiz.question11.value;
+  var ans12 = document.quiz.question12.value;
+  var ans13 = document.quiz.question13.value;
+  var ans14 = document.quiz.question14.value;
+  var ans15 = document.quiz.question15.value;
+  var ans16 = document.quiz.question16.value;
+  var ans17 = document.quiz.question17.value;
+
+
+  var correct = 0;
+
+  if (ans1 == "13 percent") {
+    correct++;
+    }
+  if (ans2 == "28 percent") {
+    correct++;
+  }
+  if (ans3 == "40 percent") {
+    correct++;
+  }
+  if (ans4 == "57 percent") {
+    correct++;
+  }
+  if (ans5 == "The family-based system, which considers relationships to family members in the United States") {
+    correct++;
+  }
+  if (ans6 == "4,400,000") {
+    correct++;
+  }
+  if (ans7 == "85,000") {
+    correct++;
+  }
+  if (ans8 == "60,000") {
+    correct++;
+  }
+  if (ans9 == "1 in 9") {
+    correct++;
+  }
+  if (ans10 == "84 percent") {
+    correct++;
+  }
+  if (ans11 == "76 percent") {
+    correct++;
+  }
+  if (ans12 == "53 percent") {
+    correct++;
+  }
+  if (ans13 == "True") {
+    correct++;
+  }
+  if (ans14 == "121 percent") {
+    correct++;
+  }
+  if (ans15 == "40 percent") {
+    correct++;
+  }
+  if (ans16 == "A migrant") {
+    correct++;
+  }
+  if (ans17 == "An immigrant") {
+    correct++;
+
+  }
+
+
+document.getElementById("after_submit").style.visibility = "visible";
+
+document.getElementById("number_correct").innerHTML = "You got " + correct + "/17 correct."
+
+document.getElementById("answers1").style.backgroundColor = "green";
+document.getElementById("answers2").style.backgroundColor = "green";
+document.getElementById("answers3").style.backgroundColor = "green";
+document.getElementById("answers4").style.backgroundColor = "green";
+document.getElementById("answers5").style.backgroundColor = "green";
+document.getElementById("answers6").style.backgroundColor = "green";
+document.getElementById("answers7").style.backgroundColor = "green";
+document.getElementById("answers8").style.backgroundColor = "green";
+document.getElementById("answers9").style.backgroundColor = "green";
+document.getElementById("answers10").style.backgroundColor = "green";
+document.getElementById("answers11").style.backgroundColor = "green";
+document.getElementById("answers12").style.backgroundColor = "green";
+document.getElementById("answers13").style.backgroundColor = "green";
+document.getElementById("answers14").style.backgroundColor = "green";
+document.getElementById("answers15").style.backgroundColor = "green";
+document.getElementById("answers16").style.backgroundColor = "green";
+document.getElementById("answers17").style.backgroundColor = "green";
+
+}
+
+</script>
+
+</head>
+<body>
+
+
+  <ul style="font: 400 15px/1.8 "Helvetica Neue", sans-serif;">
+    <li><a href="file:///C:/Users/hp/Desktop/website2.html">Home</a></li>
+    <li><a class="active" href="file:///C:/Users/hp/Desktop/newtrivia.html">Trivia</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/yourrights.html">Your Rights</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/re.html">Your Resources</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/about.html">About Us</a></li>
+  </ul>
+
+
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">How aware are you about immigrants who come to the US?</span>
+    </div>
+  </div>
+
+  <div style="color: #777;background-color:#011936;text-align:center;padding:0px 30px;text-align: justify;">
+    <h3 style="text-align:center;color:white;"></h3>
+
+                             <div><h3>Immigration is a complex issue that lies at the intersection of federal state, and local policy making. Many myths and misconceptions have been surrounding the topic of immigration. Take the immigrantion facts quiz to test your knowledge of how the immigration system works, and learn something you might not have known before.</h3> </div>
+
+                             <form id="quiz" name="quiz" >
+
+                             <div class="questions" >
+
+                             <h2 id="q1">1. What percentage of the U.S. population is foreign born?</h2>
+                             <input type="radio" id="mc" name="question1" value="5 percent">5 percent </input><br>
+                             <input type="radio" id="mc" name="question1" value="13 percent"><ans id="answers1">13 percent</ans><br>
+                             <input type="radio" id="mc" name="question1" value="42 percent">42 percent<br>
+<br>
+
+                             <h2>2. Approximately what percentage of immigrants living in the United States are unauthorized?</h2>
+                             <input type="radio" id="mc" name="question2" value="10 percent">10 percent<br>
+                             <input type="radio" id="mc" name="question2" value="28 percent"><ans id="answers2">28 percent</ans><br>
+                             <input type="radio" id="mc" name="question2" value="56 percent">56 percent<br>
+                             <br>
+
+
+                             <h2>3. What percentage of unauthorized immigrants arrived on temporary tourist, student, or work visas and stayed after those visas expired, as opposed to those who crossed the border without proper documents??</h2>
+                             <input type="radio" id="mc" name="question3" value="25 percent">25 percent<br>
+                             <input type="radio" id="mc" name="question3" value="40 percent"><ans id="answers3">40 percent</ans><br>
+                             <input type="radio" id="mc" name="question3" value="70 percent">70 percent<br>
+                             <br>
+
+                             <h2>4. 	What percentage of unauthorized immigrants living in the United States in 2013 arrived before 2000?</h2>
+                             <input type="radio" id="mc" name="question4" value="5 percent">5 percent<br>
+                             <input type="radio" id="mc" name="question4" value="39 percent">39 percent<br>
+                             <input type="radio" id="mc" name="question4" value="57 percent"><ans id="answers4">57 percent</ans><br>
+                             <br>
+
+
+                             <h2>5. How do most people admitted for permanent residence, those known as green card holders, enter the United States?</h2>
+                             <input type="radio" id="mc" name="question5" value="The employment-based system, determined by skills and U.S. labor market needs
+                             ">	The employment-based system, determined by skills and U.S. labor market needs
+                             <br>
+                             <input type="radio" id="mc" name="question5" value="The refugee system, which admits people for humanitarian reasons">The refugee system, which admits people for humanitarian reasons<br>
+                             <input type="radio" id="mc" name="question5" value="As unauthorized immigrants, outside the legal immigration system Feedback"><ans id="answers5">As unauthorized immigrants, outside the legal immigration system
+                              	Feedback</ans><br>
+                             <input type="radio" id="mc" name="question5" value="The family-based system, which considers relationships to family members in the United States">The family-based system, which considers relationships to family members in the United States<br>
+                             <br>
+
+                             <h2>6. 	Approximately how many people are waiting in the family- and employment-based immigration backlogs?</h2>
+                             <input type="radio" id="mc" name="question6" value="3,000">3,000<br>
+                             <input type="radio" id="mc" name="question6" value="100,000">100,000<br>
+                             <input type="radio" id="mc" name="question6" value="4,400,000"><ans id="answers6">4,400,000</ans><br>
+                             <br>
+
+                             <h2>7. 	Most employers who want to hire foreign temporary specialty or high-skilled workers (requiring H-1B visas) are subject to a national limit on the number of visas that the federal government will grant in a given year. What is the current limit?</h2>
+                             <input type="radio" id="mc" name="question7" value="5.000">5,000<br>
+                             <input type="radio" id="mc" name="question7" value="85,000"><ans id="answers7">85,000</ans><br>
+                             <input type="radio" id="mc" name="question7" value="500,000">500,000<br>
+                             <br>
+
+                             <h2>8. 	Approximately how many refugees were admitted to the United States in 2012? Refugees are defined as those who can prove a "well-founded fear of persecution" due to their race, membership in a social group, political opinion, religion, or national origin in their home country.</h2>
+                             <input type="radio" id="mc" name="question8" value="10,000">10,000<br>
+                             <input type="radio" id="mc" name="question8" value="60,000"><ans id="answers8">60,000</ans><br>
+                             <input type="radio" id="mc" name="question8" value="500,000">500,000 <br>
+                             <br>
+
+                             <h2>9. ____ Americans are immigrants.</h2>
+                             <input type="radio" id="mc" name="question9" value="1 in 5">1 in 5<br>
+                             <input type="radio" id="mc" name="question9" value="1 in 9"><ans id="answers9">1 in 9</ans><br>
+                             <input type="radio" id="mc" name="question9" value="1 in 12">1 in 12<br>
+                             <br>
+
+
+                             <h2>10. In 1880-1929 ___ of immigrants came to the U.S from Europe. </h2>
+                             <input type="radio" id="mc" name="q10uestion" value="65 percent">65 percent<br>
+                             <input type="radio" id="mc" name="question10" value="76 percent">76 percent<br>
+                             <input type="radio" id="mc" name="question10" value="84 percent"><ans id="answers10">84 percent</ans><br>
+                             <br>
+
+                             <h2>11. In 1965-2006 ___ of immigrants came to the U.S. from Latin America and Asia.</h2>
+                             <input type="radio" id="mc" name="question11" value="65 percent">65 percent<br>
+                             <input type="radio" id="mc" name="question11" value="76 percent"><ans id="answers11">76 percent</ans><br>
+                             <input type="radio" id="mc" name="question11" value="84 percent">84 percent<br>
+                             <br>
+
+                             <h2>12. ___ of the engineers and scientist in Silicon Valley, California are foreign born.?</h2>
+                             <input type="radio" id="mc" name="question12" value="35 percent">35 percent<br>
+                             <input type="radio" id="mc" name="question12" value="53 percent"><ans id="answers12">53 percent</ans><br>
+                             <input type="radio" id="mc" name="question12" value="60 percent">60 percent<br>
+                             <br>
+
+                             <h2>13. 25 percent of the U.S technology entrepreneurs are immigrants.</h2>
+                             <input type="radio" id="mc" name="question13" value="True"><ans id="answers13">True</ans><br>
+                             <input type="radio" id="mc" name="question13" value="False">False<br>
+                             <br>
+
+                             <h2>14. In 1997-2006 Latina owned businesses grew ___ nation wide, 80 percent are in the service sector.</h2>
+                             <input type="radio" id="mc" name="question14" value="90 percent">90 percent<br>
+                             <input type="radio" id="mc" name="question14" value="100 percent">100 percent<br>
+                             <input type="radio" id="mc" name="question14" value="121 percent"><ans id="answers14">121 percent</ans><br>
+                             <br>
+
+                             <h2>15. ___ of PhD students in American computer science and engineering programs are immigrants.</h2>
+                             <input type="radio" id="mc" name="question15" value="25 percent">25 percent<br>
+                             <input type="radio" id="mc" name="question15" value="30 percent">30 percent<br>
+                             <input type="radio" id="mc" name="question15" value="40 percent"><ans id="answers15">40 percent</ans><br>
+                             <br>
+
+                             <h2>16. ___ is a person who moves reguarly in order to find work.</h2>
+                             <input type="radio" id="mc" name="question16" value="An immigrant">An immigrant<br>
+                             <input type="radio" id="mc" name="question16" value="A migrant"><ans id="answers16">A migrant</ans><br>
+                             <br>
+
+                             <h2>17. ___ is a person who comes to a country to take up permanent residence.</h2>
+                             <input type="radio" id="mc" name="question17" value="A migrant">A migrant<br>
+                             <input type="radio" id="mc" name="question17" value="An immigrant"><ans id="answers17">An immigrant</ans><br>
+
+
+                             <input id="button" type="button" value="submit " onclick="check();">
+
+
+                             </form>
+
+                             <div id="after_submit" style="visibility: visible;">
+
+                              <p id="number_correct"></p>
+
+                             </div>
+                             </div>
+                             <center> After submitting, the green highlight indicates the correct answer. <br> Source: http://www.pewhispanic.org/2015/09/28/chapter-5-u-s-foreign-born-population-trends/   </center>
+     </div>
+    </div>
+
+  </div>
+
+
+  <div style="position:relative;">
+    <div style="color: #777;background-color:#011936;text-align:center;padding:10px 20px;text-align: justify;">
+
+    </div>
+  </div>
