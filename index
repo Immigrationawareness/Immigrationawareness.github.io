@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <script>
+  function testScroll(){
+  if(window.pageYOffset>2500){
+    document.getElementById("content").style="display:inline"
+  }
+}
+window.onscroll=testScroll
+</script>
+
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<meta charset="utf-8">
+<link href="https://d3-geomap.github.io/d3-geomap/css/d3.geomap.css" rel="stylesheet">
+
+<style>
+  h6 {
+      /*position:absolute;
+      right: 100px;
+      top: 2950px;*/
+      font-family: Georgia;
+  }
+
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("https://static.pexels.com/photos/21014/pexels-photo.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("http://teacher.scholastic.com/activities/immigration/timeline_photos/1892_small_fullsize.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://data.whicdn.com/images/34606906/original.jpg");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("http://cbsnews3.cbsistatic.com/hub/i/r/2013/08/31/b81a722e-20fa-11e3-9283-005056850598/thumbnail/1200x630/cd87d05c3bf9ccccf5c8d526d2a8c2ad/LibertyBell.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F6D7A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D9DCD6;
+}
+
+.active {
+    background-color: #2F6690;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background: #011936;
+  color: #fff;
+}
+
+
+
+.section {
+  background: #011936;
+  padding: 50px 0;
+}.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+}
+
+
+
+#timeline {
+  white-space: nowrap;
+}
+
+#timeline ol {
+  font-size: 0;
+  width: 1500px;
+  padding: 250px 0;
+  transition: all 1s;
+}
+#timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 100px;
+  height: 3px;
+  background: #fff;
+}
+
+#timeline ol li:last-child {
+  width: 170px;
+}
+
+#timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+#timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+}
+
+#timeline ol li div {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 170px;
+  padding: 15px;
+  font-size: 8pt;
+  white-space: normal;
+  color: black;
+  background: white;
+}
+
+#timeline ol li div::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+#timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+#timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+#timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+#timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent
+  white;
+  }
+
+  #timeline time {
+    display: block;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+
+
+</style>
+</head>
+<body>
+
+
+  <ul style="font: 400 15px/1.8 "Lato", sans-serif;">
+    <li><a class="active" href="file:///C:/Users/hp/Desktop/website2.html">Home</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/newtrivia.html">Trivia</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/yourrights.html">Your Rights</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/re.html">Your Resources</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/about.html">About Us</a></li>
+  </ul>
+
+
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">U.S. IMMIGRATION AWARENESS AND RESOURCES</span>
+    </div>
+  </div>
+
+  <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 style="text-align:center;color:white;">Immigration in the U.S. Over the Years 2006-2015</h3>
+  <input id="slider" type="range" min="2006" max="2015" value="2006" step="1" />
+
+          <span id="range">2006</span>
+    <div id="map"></div>
+  </div>
+
+
+  <script src="https://d3-geomap.github.io/d3-geomap/vendor/d3.geomap.dependencies.min.js"></script>
+  <script src="https://d3-geomap.github.io/d3-geomap/js/d3.geomap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+
+var map = d3.geomap.choropleth()
+.geofile('https://d3-geomap.github.io/d3-geomap/topojson/countries/USA.json')
+.projection(d3.geo.albersUsa)
+.column("2006")
+.unitId('fips')
+.colors(colorbrewer.YlGn[9])
+.scale(1000)
+.legend(true);
+
+d3.csv('data6.csv', function(error, data) {
+    d3.select('#map')
+        .datum(data)
+        .call(map.draw, map);
+    });
+
+</script>
+
+
+<script src="http://d3js.org/d3-selection.v1.min.js"></script>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="https://raw.github.com/fryn/html5slider/master/html5slider.js"></script>
+
+      <script>
+
+  onload = function() {
+    var $ = function(id) { return document.getElementById(id); };
+    $('slider').oninput = function() { $('range').innerHTML = this.value; };
+    $('slider').oninput();
+  };
+
+  d3.selectAll("input").on("change", function change() {
+          var value = this.value;
+          map.column(value).update()
+            });
+
+    </script>
+
+
+  <div class="bgimg-2">
+    <div class="caption">
+      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;">
+      <h3 style="text-align:center;color:white;">Timeline of Immigration Polices in the U.S.</h3>
+      <section id="timeline">
+        <ol>
+          <li>
+            <div>
+              <time>1882</time>
+               Prior to 1882 the United States had an increase in Chinese immigration.
+               Although the numbers were small, congress passed the Chinese Exclusion Act of 1882.
+               This act set a 10 year ban on  Chinese labor immigration.
+             </div>
+           </li>
+
+           <li>
+             <div>
+             <time> 1861-1865 </time>
+             During the Civil War political party, Know Nothings,
+              advocated for anti-immigration and anti-Catholicism policies.
+             </div>
+           </li>
+
+           <li>
+             <div>
+             <time>1890&#39s</time>
+             Groups of white Americans began to express their xenophobia,
+             pressuring Congress to restrict immigration.
+             These groups saw immigrants as a danger to the nation.
+             </div>
+         </li>
+
+
+         <li>
+           <div>
+           <time> 1924 </time>
+           The National Origins Act restricted the amount of immigrants who would be allowed in the country and also decided where they had to be from. The act prioritized northern and western Europeans, limiting eastern and southern Europeans.
+            Additionally immigrants from Asia were banned entirely.
+           </div>
+         </li>
+
+         <li>
+           <div>
+           <time> 1965 </time>
+           The Hart- Celler Act replaced the National Origins Act,
+           becasue of this act an influx of immigrants from Korea, China, India,
+           the Philippines, Pakistan, and countries in Africa,
+           came to United States.
+           </div>
+         </li>
+
+         <li>
+           <div>
+           <time> 2012 </time>
+           Out of the 40. 6 million immigrants above the age of 5,
+           approximately 50% spoke english very well.
+           </div>
+         </li>
+
+         <li>
+           <div>
+           <time> 2015 </time>
+           Immigrants made up about 13.5% of the total population,
+            which is about 43.3 million people.
+           </div>
+         </li>
+
+         <li>
+           <div>
+           <time>2016</time>
+            Immigrants make up about 27% of the population,
+            which is 84.3 million people.
+          </div>
+         </li>
+
+         <li>
+           <div>
+           <time> 2017</time>
+             On the 27th of January, president Trump filed an executive order
+              limiting travel from 7 mainly muslim countries.
+             The supreme court partially approved the travel ban.
+           </div>
+         </li>
+
+         </ol>
+
+
+      </section>
+
+    </div>
+  </div>
+
+
+
+  <div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
+  </div>
+</div>
+
+
+
+
+<div style="position:relative;">
+  <table>
+  <tr>
+<td>  <div style="color:#ddd;background-color:#011936;text-align:center;padding:50px 80px;text-align: justify;">
+      <iframe width="681" height="414" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/12CQ-BjUStw7odYfeIjtpq4oVwHsCEG_Me8sy-Oclul0/pubchart?oid=569760909&amp;format=interactive"></iframe>
+</div>
+</td>
+<td> <h6 id = "content" style="display:none"><font size="30"><p>The number of immigrants peaked in the U.S. during 1842 & 1992. </p></font></h6>
+</td>
+</tr>
+</table>
+
+</div>
