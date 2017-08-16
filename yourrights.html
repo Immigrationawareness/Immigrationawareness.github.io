@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* quick reset */
+* {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+/* relevant styles */
+.img__wrap {
+position: relative;
+height: 300px;
+width: 500px;
+}
+
+.img__description {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(29, 106, 154, 0.72);
+color: #fff;
+visibility: hidden;
+opacity: 0;
+
+/* transition effect. not necessary */
+transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+visibility: visible;
+opacity: 1;
+}
+
+body {
+  background: #1d1f20;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 24px;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("http://az616578.vo.msecnd.net/files/2017/02/09/636221954211324999-1024993194_bigstock-the-constitution-of-the-united-47931695-small.png");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("https://cdn.shopify.com/s/files/1/1184/9874/products/5_include_red_feather_1024x1024.jpg?v=1478370668");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("https://t1.pixers.pics/img/wall-murals-vintage-compass-and-old-map.png?H4sIAAAAAAAAAyWKUQrCMBAFr6MgfdlsmsQeoL89QklDohGR0E1BPL0Rv94w83C8JOSEXJ4t7TLtSconnZxSF3XGvbUqEyA81PLuvU8U_Bn9hHmB8XAETWD3U-u8GO9IE7uVFW8xxKu3gTYdTR7Jks1x9JyJDQ2PevsCe9wLFoIAAAA=");
+  min-height: 400px;
+}
+
+.bgimg-4 {
+  background-image: url("http://cbsnews3.cbsistatic.com/hub/i/r/2013/08/31/b81a722e-20fa-11e3-9283-005056850598/thumbnail/1200x630/cd87d05c3bf9ccccf5c8d526d2a8c2ad/LibertyBell.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F6D7A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D9DCD6;
+}
+
+.active {
+    background-color: #2F6690;
+}
+
+</style>
+</head>
+<body>
+
+  <ul style="font: 400 15px/1.8 "Helvetica Neue", sans-serif;">
+    <li><a href="file:///C:/Users/hp/Desktop/website2.html">Home</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/newtrivia.html">Trivia</a></li>
+    <li><a class="active" href="file:///C:/Users/hp/Desktop/yourrights.html">Your Rights</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/re.html">Your Resources</a></li>
+    <li><a href="file:///C:/Users/hp/Desktop/about.html">About Us</a></li>
+  </ul>
+
+
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">KNOW YOUR IMMIGRATION/HUMAN RIGHTS</span>
+    </div>
+  </div>
+
+  <table>
+<h3 style="text-align:center;color:white;background-color:#011936;">IMMIGRATION RIGHTS</h3>
+  <tr style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+<td>
+
+    <h3 style="text-align:center;color:white;font-size:20px;">1. A hearing before an immigration judge and review, in most cases, by a federal court</h3>
+    </div>
+    </td>
+  <td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <h3 style="text-align:center;color:white;font-size:20px;">2. Representation by a lawyer (but not at government expense)</h3>
+  </div>
+  </td>
+  </tr>
+  <tr>
+  <td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <h3 style="text-align:center;color:white;font-size:20px;">3. Reasonable notice of charges, and of a hearing's time and place</h3>
+  </div>
+  </td>
+  <td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <h3 style="text-align:center;color:white;font-size:20px;">4. A reasonable opportunity to examine the evidence and the government's witnesses</h3>
+  </div>
+  </td>
+  </tr>
+  <tr>
+  <td>  <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <h3 style="text-align:center;color:white;font-size:20px;">5. Competent interpretation for non-English speaking immigrants</h3>
+  </div>
+  </td>
+  <td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <h3 style="text-align:center;color:white;font-size:20px;">6. Clear and convincing proof that the government's grounds for deportation are valid</h3>
+  </div>
+  </td>
+  </tr>
+</table>
+</div>
+
+  <div class="bgimg-2">
+    <div class="caption">
+      <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div style="color:#ddd;background-color:#011936;text-align:center;padding:50px 80px;text-align: justify;">
+
+<h3 style="text-align:center;color:white;">Human Rights</h3>
+<table>
+<tr>
+    </div>
+  </div>
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+      <img class="img__img" src="http://www.globaltimes.cn/Portals/0//attachment/2017/2017-05-02/2a215eff-7b4f-4d02-8281-335bf9e841a1.jpeg" />
+      <h3 class="img__description"style="text-align:center;color:white;font-size:25px;">All human beings are born free and
+      equal in dignity and rights. They are
+      endowed with reason and conscience
+      and should act towards one another in a
+      spirit of brotherhood.</h3>
+  </div>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="http://cdn7.socialjusticesolutions.org/wp-content/uploads/2015/04/480619508_6d02a29979_immigration.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:20px;">Everyone is entitled to all the rights and
+freedoms set forth in this Declaration,
+without distinction of any kind, such as
+race, colour, sex, language, religion, political
+or other opinion, national or social
+origin, property, birth or other status.</h3>
+</div>
+</td>
+</tr>
+<tr>
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://wadetours.com/wp-content/uploads/2017/03/statue-of-liberty-2327760_1920-500x300.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:35px;">Everyone has the right to life,
+liberty and security of person.</h3>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://i.guim.co.uk/img/media/cb5beb9e9842eaf7e76c0156172d09e7fd45e8ad/0_87_3600_2160/500.jpg?q=55&auto=format&usm=12&fit=max&s=73d4c67402b89ab8308e0ae4fb994a73" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:30px;">No one shall be held in slavery or
+servitude; slavery and the slave trade shall be prohibited in all their forms.</h3>
+</div>
+</td>
+</tr>
+<tr>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://i.guim.co.uk/img/media/cf66449ed054f3ffcb020f15e9baa6b5151498a4/0_286_5472_3283/500.jpg?q=55&auto=format&usm=12&fit=max&s=e01e8110f1c5fde13b03eb3371c3b8dd" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:35px;">No one shall be subjected to torture or to
+cruel, inhuman or degrading treatment or punishment.</h3>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="http://i.dawn.com/medium/2016/07/577f2c9c93289.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:35px;">Everyone has the right to recognition
+everywhere as a person before the law.</h3>
+</div>
+</td>
+</tr>
+<tr>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://i.dawn.com/medium/2017/02/58abe0a4e2186.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:35px;">All are equal before the law and are
+entitled without any discrimination
+to equal protection of the law.</h3>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://media.guim.co.uk/0f7e062bedb87473e15cfbc5ca2681a0a73e8fc0/0_257_3000_1801/500.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:25px;">Everyone has the right to an effective
+remedy by the competent national tribunals
+for acts violating the fundamental
+rights granted him by the constitution
+or by law.</h3>
+</div>
+</td>
+</tr>
+<tr>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://i.guim.co.uk/img/media/8b41c53cb2cce63f6482fdeac4fe3f64dc2eefad/0_137_4543_2726/500.jpg?q=55&auto=format&usm=12&fit=max&s=e1d462fd11ad4a36e37be2c52634b4b8" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:35px;">No one shall be subjected to
+arbitrary arrest, detention or exile.</h3>
+</div>
+</td>
+
+<td> <div style="color: #777;background-color:#011936;text-align:center;padding:50px 80px;text-align: relative;">
+  <div>
+    <div class="img__wrap">
+    <img class="img__img" src="https://i1.wp.com/www.bizpacreview.com/wp-content/uploads/2017/04/AP_17028638980934.jpg" />
+<h3 class="img__description"style="text-align:center;color:white;font-size:25px;">Everyone is entitled in full equality to
+a fair and public hearing by an independent
+and impartial tribunal, in the determination
+of his rights and obligations
+and of any criminal charge against him.</h3>
+</div>
+</td>
+</tr>
+</table>
+<h3><a href="http://www.un.org/en/udhrbook/pdf/udhr_booklet_en_web.pdf">Click for more Human Rights</a></h3>
+</div>
