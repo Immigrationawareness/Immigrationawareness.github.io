@@ -119,7 +119,7 @@ li a:hover:not(.active) {
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #map { position:absolute; top:0; bottom:0; width:90%; }
     </style>
 
 </head>
@@ -171,8 +171,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia3luYWUiLCJhIjoiY2o2Z2w4d21sMGF6ajMzcnlmMTNhb
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/kynae/cj6gqodcs3ok12srzqajf6p3s',
-    zoom: 13,
-    center: [4.899, 52.372]
+    zoom: 3.8,
+    center: [-95.0119, 40.4842]
 });
 
 var layerList = document.getElementById('menu');
